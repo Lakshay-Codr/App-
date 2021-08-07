@@ -24,15 +24,16 @@ export default function Login({navigation}) {
     }
 
     ///drawer navigatio
-    function menu(){
+    function openmenu(){
         navigation.openDrawer();
+        alert("helo")
     }
     //component rendering
     return (
         <ScrollView style={styles.container}>
                 {/* ///drawer navigatio */}
 
-            <Button title="menu" onPress={()=>menu()}/>
+            <Button title="click" onPress={()=>openmenu()}/>
             <Text style={styles.title}>Login</Text>
             <View style={styles.form}>
                 <Text style={styles.label}>Email Address</Text>

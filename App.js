@@ -5,25 +5,25 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigation from './components/Navigation';
-
+import Tabnavigation from './components/Tabnavigation';
+import Drawernavigator from './components/Drawer';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    
      <NavigationContainer>
-        <Navigation>
+        {/* <Navigation>
           
-        </Navigation>
+        </Navigation> */}
+        {/* <Tabnavigation></Tabnavigation> */}
+        <Drawernavigator></Drawernavigator>
      </NavigationContainer>
-    </View>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
