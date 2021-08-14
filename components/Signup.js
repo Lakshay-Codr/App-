@@ -9,6 +9,7 @@ import { reduce } from 'async';
 import ORDivider from './Ordivider';
 import SnackBar from './Snackbar';
 import { Audio } from 'expo-av';
+import firebase from './FirebaseAuthentication';
 
 export default class Signup extends ValidationComponent{
     constructor(props){
@@ -60,8 +61,19 @@ export default class Signup extends ValidationComponent{
           if(this.getErrorMessages()){
               this.displaysnakbar("error",this.getErrorMessages())
           }
-          else{ this.displaysnakbar("sucess","LoginSucessful")
+          else{ 
           this.playaudio();
+          firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+                    .then((userCredential)=>{
+                      var user = userCredential.user;
+                      console.log(user)
+                      this.displaysnakbar("sucess","LoginSucessful")
+                  
+                    })
+                    .catch((error)=>{
+                        this.displaysnakbar("error",this.getErrorMessages())
+
+                    });
         }
 
          

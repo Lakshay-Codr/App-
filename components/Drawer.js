@@ -11,8 +11,9 @@ const Drawer=createDrawerNavigator();
 export default function Drawernavigator() {
   return (
       <Drawer.Navigator>
-        <Drawer.Screen name="Log In" component={Login} />
         <Drawer.Screen name="Sign Up" component={Signup} />
+        <Drawer.Screen name="Log In" component={Login} />
+
       </Drawer.Navigator>
     
   );
